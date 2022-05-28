@@ -1,3 +1,5 @@
+dir_walk($ARGV[0], $ARGV[1]);
+
 sub dir_walk {
     my ($top, $callback) = @_;
     my $DIR;
@@ -15,4 +17,8 @@ sub dir_walk {
             dir_walk("$top/$file", $callback);
         }
     }
+}
+
+sub print_dir {
+    print $_[0], "\n";
 }
